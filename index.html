@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OCP UPI Config Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>OpenShift UPI Config Generator</h1>
+
+  <div class="form-grid">
+    <input id="cluster" placeholder="Cluster Name e.g. ocp-cluster-prod">
+    <input id="domain" placeholder="Base Domain e.g. test.com.pk">
+    <input id="svc" placeholder="Service/DNS Node Hostname e.g. ocp-svc">
+    <input id="lb" placeholder="DNS / LoadBalancer IP">
+    <input id="subnet" placeholder="Reverse Zone Subnet e.g. 192.168.50">
+    <input id="bootstrap" placeholder="Bootstrap IP">
+    <input id="masters" type="number" placeholder="Number of Masters">
+    <input id="workers" type="number" placeholder="Number of Workers">
+  </div>
+
+  <button onclick="buildNodeInputs()">Generate Node Fields</button>
+
+  <div id="nodes"></div>
+
+  <textarea id="pull" placeholder="Paste Pull Secret"></textarea>
+  <textarea id="ssh" placeholder="Paste SSH Public Key"></textarea>
+
+  <button class="generate" onclick="generateConfigs()">Generate & Download All</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OCP UPI Config Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>OpenShift UPI Config Generator</h1>
+
+  <div class="form-grid">
+    <input id="cluster" placeholder="Cluster Name e.g. ocp-cluster-prod">
+    <input id="domain" placeholder="Base Domain e.g. test.com.pk">
+    <input id="svc" placeholder="Service/DNS Node Hostname e.g. ocp-svc">
+    <input id="lb" placeholder="DNS / LoadBalancer IP">
+    <input id="subnet" placeholder="Reverse Zone Subnet e.g. 192.168.50">
+    <input id="bootstrap" placeholder="Bootstrap IP">
+    <input id="masters" type="number" placeholder="Number of Masters">
+    <input id="workers" type="number" placeholder="Number of Workers">
+  </div>
+
+  <button onclick="buildNodeInputs()">Generate Node Fields</button>
+
+  <div id="nodes"></div>
+
+  <textarea id="pull" placeholder="Paste Pull Secret"></textarea>
+  <textarea id="ssh" placeholder="Paste SSH Public Key"></textarea>
+
+  <button class="generate" onclick="generateConfigs()">Generate & Download All</button>
+
+  <div class="instructions">
+    <h2>Usage Instructions</h2>
+    <p>After generating the files, copy them to the appropriate locations on your system:</p>
+    <ul>
+      <li><strong>named.conf</strong> → <code>/etc/named.conf</code> or <code>/var/named/named.conf</code></li>
+      <li><strong>Forward and Reverse Zones</strong> → <code>/var/named/</code></li>
+      <li><strong>haproxy.cfg</strong> → <code>/etc/haproxy/haproxy.cfg</code> or <code>/var/haproxy/haproxy.cfg</code></li>
+    </ul>
+    <p>Ensure the ownership and permissions are correct for the services to read them:</p>
+    <pre>
+chown root:named /var/named/*
+chmod 640 /var/named/*
+chown haproxy:haproxy /var/haproxy/haproxy.cfg
+chmod 640 /var/haproxy/haproxy.cfg
+    </pre>
+    <p>Developed by <strong>Abid Ali</strong></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
