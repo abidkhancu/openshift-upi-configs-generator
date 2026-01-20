@@ -11,6 +11,11 @@ Generates the following files dynamically:
 - `haproxy.cfg`  
 
 All files are **customized based on user inputs** like cluster name, base domain, DNS/LB IP, bootstrap/master/worker IPs, pull secret, and SSH key.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abidkhancu/openshift-upi-configs-generator/refs/heads/main/ss.png" width="700">
+</p>
+
+
 
 ## Features
 
